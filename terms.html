@@ -7,9 +7,14 @@
   <meta name="description" content="Terms of Use for Motive, the daily-habit app." />
   <meta name="robots" content="index, follow" />
   <!-- App-Store-required disclosure surface (Guideline 3.1.2).
-       Mirror of app/terms.tsx and lib/i18n/en|ar.ts → terms.*. When
-       these terms change, edit BOTH places. Bilingual single-page so
-       reviewers + users hit one URL regardless of locale. -->
+       Mirror of app/terms.tsx and the en.ts / ar.ts `terms.*` i18n
+       block. When the body text changes, edit BOTH places to keep the
+       in-app screens and the public URL in sync. Structure follows
+       the standard consumer-app ToU pattern researched 2026-05-27
+       (Headspace + Strava plain-English-formal register, Apple's
+       mandatory auto-renewal boilerplate in §3, ALL CAPS warranty /
+       liability blocks in §8 and §9, KSA jurisdiction + Arabic-
+       prevails clause). Zero em-dashes by direct user direction. -->
   <style>
     :root {
       --bg: #0F0E0C;
@@ -29,7 +34,7 @@
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      line-height: 1.5;
+      line-height: 1.55;
     }
     main {
       max-width: 720px;
@@ -71,12 +76,13 @@
       font-weight: 600;
     }
     .lede {
-      font-size: 17px;
+      font-size: 16px;
       color: var(--muted);
       margin-bottom: 48px;
+      line-height: 1.6;
     }
     section {
-      margin-top: 40px;
+      margin-top: 36px;
     }
     .eyebrow {
       font-size: 11px;
@@ -89,16 +95,30 @@
       font-size: 17px;
       font-weight: 700;
       margin: 0 0 8px;
+      letter-spacing: -0.1px;
     }
-    p {
+    p, ol, ul {
       margin: 0;
       color: var(--muted);
-      font-size: 16px;
-      line-height: 1.55;
+      font-size: 15px;
+      line-height: 1.65;
+    }
+    section p + p, section p + ol, section ol + p {
+      margin-top: 12px;
+    }
+    ol, ul {
+      padding-inline-start: 24px;
+    }
+    li + li { margin-top: 6px; }
+    .caps {
+      text-transform: uppercase;
+      letter-spacing: 0.2px;
+      font-size: 14px;
+      color: var(--muted);
     }
     .contact {
-      margin-top: 64px;
-      padding-top: 32px;
+      margin-top: 56px;
+      padding-top: 28px;
       border-top: 1px solid var(--border);
     }
     .contact h2 {
@@ -128,6 +148,10 @@
       text-align: right;
       font-family: "SF Arabic", "Geeza Pro", -apple-system, system-ui, sans-serif;
     }
+    .ar ol, .ar ul {
+      padding-inline-start: 0;
+      padding-inline-end: 24px;
+    }
     body.ar-active .en { display: none; }
     body.ar-active .ar { display: block; }
     body.ar-active { direction: rtl; }
@@ -136,8 +160,8 @@
         --bg: #FBF7F0;
         --surface: rgba(0,0,0,0.04);
         --text: #1A1814;
-        --muted: rgba(26,24,20,0.65);
-        --faint: rgba(26,24,20,0.40);
+        --muted: rgba(26,24,20,0.72);
+        --faint: rgba(26,24,20,0.45);
         --border: rgba(0,0,0,0.10);
       }
     }
@@ -152,124 +176,217 @@
 
     <!-- ENGLISH ============================================== -->
     <div class="en">
-      <p class="effective">Effective May 27, 2026</p>
+      <p class="effective">Effective 27 May 2026</p>
       <h1>Terms of Use.</h1>
-      <p class="lede">Motive helps you build daily habits. You agree to use it honestly, not abuse it or hurt anyone with it, and accept that we're still in beta &mdash; things may change. The full terms are below.</p>
+      <p class="lede">These Terms of Use ("Terms") form a binding agreement between you and Motive ("Motive," "we," "us," or "our") regarding your use of the Motive mobile application and any related services (together, the "Service"). By installing, accessing, or using the Service, you agree to be bound by these Terms. If you do not agree, please do not use the Service.</p>
 
       <section>
         <p class="eyebrow">§ 1</p>
-        <h2>Using Motive</h2>
-        <p>You can use Motive as long as you're at least 13 years old (or the minimum age in your country) and you follow these terms. Your account is yours to keep, transfer, or delete at any time from Settings.</p>
+        <h2>Eligibility</h2>
+        <p>You must be at least 13 years of age to use the Service, or such higher minimum age as required by the law of your jurisdiction. By using the Service, you represent and warrant that you meet this requirement and have the legal capacity to enter into these Terms.</p>
       </section>
+
       <section>
         <p class="eyebrow">§ 2</p>
-        <h2>Your content</h2>
-        <p>Your photos, check-ins, reflections, and chats belong to you. By using Motive, you give us permission to store and display them inside the app so the product can work, that's it. We don't sell your content, train models on it, or share it with advertisers.</p>
+        <h2>Your Account</h2>
+        <p>You may use the Service as a guest, or you may sign in using Apple or Google authentication. You are responsible for the activity that occurs under your account. You agree to provide accurate information and to keep your authentication credentials secure. You may delete your account at any time from the Settings screen; once deleted, your account, goals, check-ins, photos, reflections, and chats cannot be recovered.</p>
       </section>
+
       <section>
         <p class="eyebrow">§ 3</p>
-        <h2>Privacy</h2>
-        <p>We collect the minimum we need to run the app. We never sell your data. Read our <a href="./privacy.html" style="color:var(--text);">Privacy Policy</a> for the full breakdown of what gets stored, where, and for how long.</p>
+        <h2>Subscriptions and Billing</h2>
+        <p>The Service offers an optional premium subscription with additional features. Subscriptions are sold through and billed by Apple under your Apple ID. Your subscription will automatically renew unless it is canceled at least 24 hours before the end of the current period. Your account will be charged for renewal within 24 hours prior to the end of the current period. You can manage and cancel your subscriptions by going to your account settings on the App Store after purchase. Refunds, where available, are handled by Apple in accordance with their policies. Free trials, if offered, convert into paid subscriptions at the end of the trial period unless you cancel beforehand.</p>
       </section>
+
       <section>
         <p class="eyebrow">§ 4</p>
-        <h2>Acceptable use</h2>
-        <p>Don't use Motive to harass people, share illegal content, impersonate someone else, scrape data at scale, or break the app on purpose. We may remove content or close accounts that do.</p>
+        <h2>Your Content</h2>
+        <p>You retain all ownership rights in the content you create through the Service, including photos, captions, reflections, and chat messages ("Your Content"). You grant Motive a worldwide, non-exclusive, royalty-free license to host, store, transmit, and display Your Content solely as necessary to provide the Service to you and to other users you have chosen to share with. We will not sell Your Content, license it to third parties for marketing, or use it to train artificial intelligence or machine-learning models.</p>
       </section>
+
       <section>
         <p class="eyebrow">§ 5</p>
-        <h2>Premium</h2>
-        <p>Premium subscriptions are billed through the App Store. You can cancel anytime from your Apple ID settings; refunds are handled by Apple per their policies. We may change features or pricing with reasonable notice.</p>
+        <h2>Acceptable Use</h2>
+        <p>When using the Service, you agree that you will not:</p>
+        <ol type="a">
+          <li>harass, threaten, intimidate, or otherwise harm other users;</li>
+          <li>post or transmit unlawful, defamatory, fraudulent, obscene, or infringing content;</li>
+          <li>impersonate any person, entity, or affiliation;</li>
+          <li>attempt to access another user's account without authorization;</li>
+          <li>interfere with the integrity, performance, or security of the Service;</li>
+          <li>scrape, harvest, or collect data from the Service at scale; or</li>
+          <li>use the Service for any purpose that violates applicable law.</li>
+        </ol>
+        <p>We reserve the right to remove content, restrict features, or suspend or terminate accounts that violate these rules.</p>
       </section>
+
       <section>
         <p class="eyebrow">§ 6</p>
-        <h2>Service availability</h2>
-        <p>We do our best to keep Motive running, but we don't guarantee it'll be up 24/7. We may take it down for maintenance, updates, or to fix something that's broken. Your local data stays on your device when we're offline.</p>
+        <h2>Service Availability</h2>
+        <p>We work to keep the Service available, reliable, and useful, but we do not guarantee uninterrupted operation. We may modify, suspend, or discontinue features at our discretion, with or without notice. Your locally stored data remains on your device when the Service is offline or when you have not signed in.</p>
       </section>
+
       <section>
         <p class="eyebrow">§ 7</p>
-        <h2>Limits</h2>
-        <p>Motive is offered as is. We can't promise it will fit a specific purpose or never have bugs. To the extent the law allows, we're not liable for indirect damages from using the app. Some places don't allow this kind of limitation, in which case it just doesn't apply to you.</p>
+        <h2>Termination</h2>
+        <p>You may stop using the Service at any time by deleting your account. We may suspend or terminate your access to the Service if you breach these Terms, if we are required to do so by law, or if we discontinue the Service. Upon termination, your right to use the Service ends immediately. Sections that by their nature should survive termination (including ownership, disclaimers, limitation of liability, and governing law) will continue to apply.</p>
       </section>
+
       <section>
         <p class="eyebrow">§ 8</p>
-        <h2>Changes</h2>
-        <p>We may update these terms as the app evolves. When we do, we'll bump the effective date at the top and let you know inside the app. Continuing to use Motive after a change means you accept the new terms.</p>
+        <h2>Disclaimers</h2>
+        <p class="caps">The Service is provided on an "as is" and "as available" basis, without warranties of any kind, whether express, implied, or statutory, including the implied warranties of merchantability, fitness for a particular purpose, and non-infringement. We do not warrant that the Service will be uninterrupted, error-free, or free of harmful components. Any health, wellness, or habit-related content within the Service is provided for informational purposes only and is not medical advice.</p>
+      </section>
+
+      <section>
+        <p class="eyebrow">§ 9</p>
+        <h2>Limitation of Liability</h2>
+        <p class="caps">To the fullest extent permitted by applicable law, in no event will Motive, its affiliates, or their respective directors, officers, employees, or agents be liable for any indirect, incidental, special, consequential, exemplary, or punitive damages, or for any loss of data, revenue, profits, or goodwill, arising from or related to your use of the Service. Our aggregate liability for all claims arising under these Terms will not exceed the greater of (a) the amounts you have paid to us in the twelve months preceding the event giving rise to the claim, or (b) fifty US dollars.</p>
+      </section>
+
+      <section>
+        <p class="eyebrow">§ 10</p>
+        <h2>Indemnity</h2>
+        <p>You agree to defend, indemnify, and hold harmless Motive and its affiliates from any claim or demand, including reasonable attorneys' fees, arising out of your breach of these Terms, your misuse of the Service, or your violation of any applicable law or third-party right.</p>
+      </section>
+
+      <section>
+        <p class="eyebrow">§ 11</p>
+        <h2>Governing Law and Jurisdiction</h2>
+        <p>These Terms are governed by the laws of the Kingdom of Saudi Arabia, without regard to conflict-of-laws principles. Any dispute arising out of or relating to these Terms or the Service shall be subject to the exclusive jurisdiction of the competent courts of Riyadh, Saudi Arabia.</p>
+      </section>
+
+      <section>
+        <p class="eyebrow">§ 12</p>
+        <h2>Language</h2>
+        <p>These Terms are made available in English and Arabic. In the event of any discrepancy or inconsistency between the two versions, the Arabic version shall prevail.</p>
+      </section>
+
+      <section>
+        <p class="eyebrow">§ 13</p>
+        <h2>Changes to These Terms</h2>
+        <p>We may revise these Terms from time to time. When we do, we will update the effective date at the top and notify you within the Service. Your continued use of the Service after the revised Terms take effect constitutes your acceptance of the revisions. If you do not agree to the revised Terms, you must stop using the Service.</p>
       </section>
 
       <div class="contact">
-        <h2>Questions?</h2>
-        <p>Reach us anytime at <a href="mailto:smalldaysapp@gmail.com" style="color:var(--text);">smalldaysapp@gmail.com</a></p>
+        <h2>Contact</h2>
+        <p>For questions about these Terms, contact us at <a href="mailto:smalldaysapp@gmail.com" style="color:var(--text);">smalldaysapp@gmail.com</a>.</p>
       </div>
 
       <p class="footer">
-        <a href="./">Motive</a> · <a href="./privacy.html">Privacy Policy</a>
+        <a href="./">Motive</a> &nbsp;·&nbsp; <a href="./privacy.html">Privacy Policy</a>
       </p>
     </div>
 
     <!-- ARABIC ================================================ -->
     <div class="ar">
-      <p class="effective">سارية من 27 مايو 2026</p>
+      <p class="effective">سارية اعتبارًا من ٢٧ مايو ٢٠٢٦</p>
       <h1>شروط الاستخدام.</h1>
-      <p class="lede">موتيف يساعدك تبني عادات يومية. باستخدامك للتطبيق، توافق إنك تستخدمه بصدق، ما تسيء استخدامه، ولا تأذي أحد فيه. وتقبل إننا لسّا في مرحلة تجريبية، يعني تتوقع تغييرات. التفاصيل تحت.</p>
+      <p class="lede">تُشكّل شروط الاستخدام هذه ("الشروط") اتفاقًا ملزمًا بينك وبين موتيف ("موتيف"، أو "نحن") فيما يتعلق باستخدامك لتطبيق موتيف وأي خدمات ذات صلة (يُشار إليها مجتمعةً بـ"الخدمة"). إن تثبيتك للخدمة أو الوصول إليها أو استخدامها يعني موافقتك على الالتزام بهذه الشروط. وفي حال عدم موافقتك، يُرجى عدم استخدام الخدمة.</p>
 
       <section>
         <p class="eyebrow">§ ١</p>
-        <h2>استخدام موتيف</h2>
-        <p>تقدر تستخدم موتيف إذا عمرك 13 سنة أو أكبر (أو الحد الأدنى المعتمد في بلدك)، والتزمت بهذه الشروط. حسابك ملكك، تقدر تنقله أو تحذفه في أي وقت من الإعدادات.</p>
+        <h2>الأهلية</h2>
+        <p>يجب ألا يقل عمرك عن ١٣ عامًا لاستخدام الخدمة، أو الحد الأدنى الأعلى للسن المطلوب وفقًا لقوانين بلدك. باستخدامك للخدمة، فإنك تُقرّ وتضمن استيفاءك لهذا الشرط وأهليتك القانونية للارتباط بهذه الشروط.</p>
       </section>
+
       <section>
         <p class="eyebrow">§ ٢</p>
-        <h2>محتواك</h2>
-        <p>صورك وتسجيلاتك وتأمّلاتك ومحادثاتك ملكك. لمّا تستخدم موتيف، تعطينا الإذن نخزّنها ونعرضها داخل التطبيق عشان يشتغل. هذا فقط. ما نبيع محتواك، ولا ندرّب عليه نماذج، ولا نشاركه مع أحد للإعلانات.</p>
+        <h2>حسابك</h2>
+        <p>يمكنك استخدام الخدمة كزائر، أو تسجيل الدخول عبر حساب Apple أو Google. أنت مسؤول عن النشاط الذي يجري تحت حسابك، وتلتزم بتقديم معلومات صحيحة والحفاظ على بيانات اعتمادك سرّية. يحق لك حذف حسابك في أي وقت من شاشة الإعدادات؛ وبمجرد الحذف، لا يمكن استرجاع حسابك أو أهدافك أو تسجيلاتك أو صورك أو تأمّلاتك أو محادثاتك.</p>
       </section>
+
       <section>
         <p class="eyebrow">§ ٣</p>
-        <h2>الخصوصية</h2>
-        <p>نجمع أقل ما يلزم لتشغيل التطبيق. ما نبيع بياناتك أبدًا. اقرأ <a href="./privacy.html" style="color:var(--text);">سياسة الخصوصية</a> لتفاصيل وش يُخزّن، وين، وكم مدة.</p>
+        <h2>الاشتراكات والفوترة</h2>
+        <p>تقدّم الخدمة اشتراكًا اختياريًا (بريميوم) بميزات إضافية. تُباع الاشتراكات وتُفوتر عبر شركة Apple باستخدام حساب Apple الخاص بك. يتجدّد اشتراكك تلقائيًا ما لم يُلغَ قبل ٢٤ ساعة على الأقل من نهاية الفترة الحالية. ويُخصم رسم التجديد من حسابك خلال الـ٢٤ ساعة السابقة لنهاية الفترة الحالية. يمكنك إدارة اشتراكاتك وإلغاؤها من إعدادات حسابك في متجر التطبيقات بعد الشراء. تُعالَج طلبات الاسترداد، حيثما كانت متاحة، من قِبل Apple وفقًا لسياساتها. تتحوّل الفترات التجريبية المجانية، إن وُجدت، إلى اشتراكات مدفوعة في نهاية الفترة التجريبية ما لم تُلغِها مسبقًا.</p>
       </section>
+
       <section>
         <p class="eyebrow">§ ٤</p>
-        <h2>الاستخدام المقبول</h2>
-        <p>لا تستخدم موتيف للتحرّش بالناس، أو نشر محتوى غير قانوني، أو انتحال شخصية غيرك، أو سحب بيانات بالجملة، أو تعطيل التطبيق عمدًا. عندنا الحق نحذف المحتوى أو نغلق الحسابات اللي تخالف.</p>
+        <h2>محتواك</h2>
+        <p>تحتفظ بجميع حقوق الملكية في المحتوى الذي تُنشئه عبر الخدمة، بما في ذلك الصور والتعليقات والتأمّلات ورسائل المحادثات ("محتواك"). وتمنح موتيف ترخيصًا عالميًا غير حصري وخاليًا من الإتاوات لاستضافة محتواك وتخزينه ونقله وعرضه، فقط بالقدر اللازم لتقديم الخدمة لك وللمستخدمين الذين اخترت مشاركتهم. ولن نبيع محتواك ولن نرخّصه لأطراف ثالثة لأغراض التسويق، ولن نستخدمه لتدريب نماذج الذكاء الاصطناعي أو التعلّم الآلي.</p>
       </section>
+
       <section>
         <p class="eyebrow">§ ٥</p>
-        <h2>البريميوم</h2>
-        <p>اشتراكات البريميوم تتم عبر متجر التطبيقات. تقدر تلغي في أي وقت من إعدادات Apple ID. الاسترداد يتم عبر سياسة Apple. قد نغيّر الميزات أو الأسعار بإشعار مسبق معقول.</p>
+        <h2>الاستخدام المقبول</h2>
+        <p>عند استخدامك للخدمة، تلتزم بألا تقوم بما يلي:</p>
+        <ol type="a">
+          <li>مضايقة المستخدمين الآخرين أو تهديدهم أو ترويعهم أو إيذاءهم؛</li>
+          <li>نشر أو إرسال محتوى مخالف للقانون أو مسيء أو احتيالي أو فاحش أو منتهك للحقوق؛</li>
+          <li>انتحال شخصية أي شخص أو جهة؛</li>
+          <li>محاولة الوصول إلى حساب مستخدم آخر دون إذن؛</li>
+          <li>العبث بسلامة الخدمة أو أدائها أو أمنها؛</li>
+          <li>جمع البيانات من الخدمة بكميات كبيرة؛</li>
+          <li>أو استخدام الخدمة لأي غرض يخالف القوانين السارية.</li>
+        </ol>
+        <p>ونحتفظ بحقّنا في إزالة المحتوى أو تقييد الميزات أو تعليق الحسابات أو إنهائها في حال مخالفة هذه القواعد.</p>
       </section>
+
       <section>
         <p class="eyebrow">§ ٦</p>
         <h2>توفّر الخدمة</h2>
-        <p>نحاول نخلّي موتيف شغّال طول الوقت، بس ما نضمن إنه يشتغل 24/7. ممكن نوقفه للصيانة أو التحديث أو إصلاح عطل. بياناتك المحلية تبقى على جهازك حتى لو الخدمة عطلانة.</p>
+        <p>نسعى لإبقاء الخدمة متاحة وموثوقة، إلا أننا لا نضمن استمراريتها دون انقطاع. ويحق لنا تعديل الميزات أو تعليقها أو إيقافها وفقًا لتقديرنا، بإشعار أو بدون إشعار. وتبقى بياناتك المحلية على جهازك عندما تكون الخدمة غير متصلة أو عند عدم تسجيل دخولك.</p>
       </section>
+
       <section>
         <p class="eyebrow">§ ٧</p>
-        <h2>حدود المسؤولية</h2>
-        <p>نقدّم موتيف "كما هو". ما نضمن إنه يناسب غرض معيّن أو إنه خالٍ من الأخطاء. في حدود ما يسمح به القانون، ما نتحمّل أي أضرار غير مباشرة من استخدام التطبيق. بعض المناطق ما تسمح بهذا النوع من التحديد، وفي هذه الحالة ما ينطبق عليك.</p>
+        <h2>الإنهاء</h2>
+        <p>يحق لك التوقف عن استخدام الخدمة في أي وقت بحذف حسابك. ويحق لنا تعليق وصولك إلى الخدمة أو إنهاؤه في حال إخلالك بهذه الشروط، أو إذا اقتضى القانون ذلك، أو إذا أوقفنا الخدمة. وعند الإنهاء، ينتهي حقك في استخدام الخدمة فورًا. وتظل الأحكام التي يقتضي طبيعتها الاستمرار بعد الإنهاء سارية (بما في ذلك الملكية وإخلاء المسؤولية وحدود المسؤولية والقانون الحاكم).</p>
       </section>
+
       <section>
         <p class="eyebrow">§ ٨</p>
-        <h2>التغييرات</h2>
-        <p>قد نحدّث هذه الشروط مع تطوّر التطبيق. لمّا يصير، نرفع تاريخ السريان فوق ونعلمك داخل التطبيق. استمرارك في استخدام موتيف بعد التغيير معناه إنك توافق على الشروط الجديدة.</p>
+        <h2>إخلاء المسؤولية</h2>
+        <p>تُقدَّم الخدمة "كما هي" و"كما تتوفّر"، دون ضمانات من أي نوع، صريحةً كانت أم ضمنية أم قانونية، بما في ذلك الضمانات الضمنية المتعلقة بالقابلية للتسويق والملاءمة لغرض معيّن وعدم الانتهاك. ولا نضمن أن تكون الخدمة خاليةً من الانقطاع أو الأخطاء أو المكوّنات الضارة. وأي محتوى يتعلق بالصحة أو العافية أو العادات يُقدَّم لأغراض إعلامية فقط ولا يُعدّ استشارة طبية.</p>
+      </section>
+
+      <section>
+        <p class="eyebrow">§ ٩</p>
+        <h2>حدود المسؤولية</h2>
+        <p>إلى أقصى حدّ يسمح به القانون، لن تتحمّل موتيف ولا الشركات التابعة لها ولا أيٌّ من مديريها أو موظفيها أو وكلائها المسؤولية عن أي أضرار غير مباشرة أو عرضية أو خاصة أو تبعية أو تأديبية، ولا عن أي خسارة في البيانات أو الإيرادات أو الأرباح أو السمعة التجارية، تنشأ عن استخدامك للخدمة أو ترتبط به. ولن تتجاوز مسؤوليتنا الإجمالية عن جميع المطالبات الناشئة عن هذه الشروط أكبر المبلغين التاليين: (أ) ما دفعته لنا خلال الاثني عشر شهرًا السابقة للحدث المنشئ للمطالبة، أو (ب) خمسين دولارًا أمريكيًا.</p>
+      </section>
+
+      <section>
+        <p class="eyebrow">§ ١٠</p>
+        <h2>التعويض</h2>
+        <p>توافق على الدفاع عن موتيف والشركات التابعة لها وتعويضها وحمايتها من أي مطالبة أو دعوى، بما في ذلك أتعاب المحاماة المعقولة، تنشأ عن إخلالك بهذه الشروط أو إساءة استخدامك للخدمة أو انتهاكك لأي قانون ساري أو حق طرف ثالث.</p>
+      </section>
+
+      <section>
+        <p class="eyebrow">§ ١١</p>
+        <h2>القانون الحاكم والاختصاص القضائي</h2>
+        <p>تخضع هذه الشروط لأنظمة المملكة العربية السعودية، دون الاعتداد بمبادئ تنازع القوانين. ويكون الاختصاص القضائي الحصري لأي نزاع ناشئ عن هذه الشروط أو متعلق بالخدمة للمحاكم المختصة في مدينة الرياض، المملكة العربية السعودية.</p>
+      </section>
+
+      <section>
+        <p class="eyebrow">§ ١٢</p>
+        <h2>اللغة</h2>
+        <p>تُتاح هذه الشروط باللغتين الإنجليزية والعربية. وفي حال وجود أي تعارض أو اختلاف بين النسختين، تكون النسخة العربية هي المعتمدة.</p>
+      </section>
+
+      <section>
+        <p class="eyebrow">§ ١٣</p>
+        <h2>التعديلات على هذه الشروط</h2>
+        <p>يحق لنا تعديل هذه الشروط من وقت لآخر. وعند القيام بذلك، نُحدّث تاريخ السريان أعلاه ونُخطرك داخل الخدمة. ويُعدّ استمرارك في استخدام الخدمة بعد سريان الشروط المعدّلة قبولًا منك للتعديلات. وفي حال عدم موافقتك على الشروط المعدّلة، يجب عليك التوقف عن استخدام الخدمة.</p>
       </section>
 
       <div class="contact">
-        <h2>عندك سؤال؟</h2>
-        <p>تواصل معنا في أي وقت على <a href="mailto:smalldaysapp@gmail.com" style="color:var(--text);">smalldaysapp@gmail.com</a></p>
+        <h2>للتواصل</h2>
+        <p>لأي استفسار حول هذه الشروط، يُرجى مراسلتنا على <a href="mailto:smalldaysapp@gmail.com" style="color:var(--text);">smalldaysapp@gmail.com</a>.</p>
       </div>
 
       <p class="footer">
-        <a href="./">موتيف</a> · <a href="./privacy.html">سياسة الخصوصية</a>
+        <a href="./">موتيف</a> &nbsp;·&nbsp; <a href="./privacy.html">سياسة الخصوصية</a>
       </p>
     </div>
   </main>
 
   <script>
-    // Tiny language toggle — purely client-side. Respects ?lang= and
-    // #ar / #en hash, and falls back to browser language detection
-    // for first-time visitors (Saudi Arabia / Arabic browsers land
-    // in Arabic immediately, no extra click).
+    // Tiny language toggle. Respects #en / #ar hash; defaults to Arabic
+    // for ar-language browsers, English otherwise. Client-side only;
+    // no analytics, no tracking.
     (function() {
       var body = document.body;
       var links = document.querySelectorAll('.lang-toggle a');

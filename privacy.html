@@ -6,10 +6,13 @@
   <title>Privacy Policy · Motive</title>
   <meta name="description" content="Privacy Policy for Motive, the daily-habit app." />
   <meta name="robots" content="index, follow" />
-  <!-- App-Store-required disclosure surface (Guideline 5.1.1). The
+  <!-- App-Store-REQUIRED disclosure surface (Guideline 5.1.1). The
        Privacy Policy URL is a hard blocker for App Store Connect
-       submission. Mirror of app/privacy.tsx + i18n privacyPolicy.* -
-       when this changes, edit BOTH places. Bilingual single-page. -->
+       submission. Mirror of app/privacy.tsx and the en.ts / ar.ts
+       `privacyPolicy.*` i18n block. Standard ten-section consumer-
+       app privacy structure (collection, use, sharing, retention,
+       security, rights, children, transfers, third parties, changes).
+       Zero em-dashes. -->
   <style>
     :root {
       --bg: #0F0E0C;
@@ -29,7 +32,7 @@
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      line-height: 1.5;
+      line-height: 1.55;
     }
     main {
       max-width: 720px;
@@ -71,11 +74,12 @@
       font-weight: 600;
     }
     .lede {
-      font-size: 17px;
+      font-size: 16px;
       color: var(--muted);
       margin-bottom: 48px;
+      line-height: 1.6;
     }
-    section { margin-top: 40px; }
+    section { margin-top: 36px; }
     .eyebrow {
       font-size: 11px;
       letter-spacing: 1.4px;
@@ -87,16 +91,24 @@
       font-size: 17px;
       font-weight: 700;
       margin: 0 0 8px;
+      letter-spacing: -0.1px;
     }
-    p {
+    p, ol, ul {
       margin: 0;
       color: var(--muted);
-      font-size: 16px;
-      line-height: 1.55;
+      font-size: 15px;
+      line-height: 1.65;
     }
+    section p + p, section p + ol, section ol + p {
+      margin-top: 12px;
+    }
+    ol, ul {
+      padding-inline-start: 24px;
+    }
+    li + li { margin-top: 6px; }
     .contact {
-      margin-top: 64px;
-      padding-top: 32px;
+      margin-top: 56px;
+      padding-top: 28px;
       border-top: 1px solid var(--border);
     }
     .contact h2 {
@@ -126,6 +138,10 @@
       text-align: right;
       font-family: "SF Arabic", "Geeza Pro", -apple-system, system-ui, sans-serif;
     }
+    .ar ol, .ar ul {
+      padding-inline-start: 0;
+      padding-inline-end: 24px;
+    }
     body.ar-active .en { display: none; }
     body.ar-active .ar { display: block; }
     body.ar-active { direction: rtl; }
@@ -134,8 +150,8 @@
         --bg: #FBF7F0;
         --surface: rgba(0,0,0,0.04);
         --text: #1A1814;
-        --muted: rgba(26,24,20,0.65);
-        --faint: rgba(26,24,20,0.40);
+        --muted: rgba(26,24,20,0.72);
+        --faint: rgba(26,24,20,0.45);
         --border: rgba(0,0,0,0.10);
       }
     }
@@ -150,105 +166,233 @@
 
     <!-- ENGLISH ============================================== -->
     <div class="en">
-      <p class="effective">Effective May 27, 2026</p>
+      <p class="effective">Effective 27 May 2026</p>
       <h1>Privacy Policy.</h1>
-      <p class="lede">We collect the minimum we need to run Motive. We don't sell your data. We don't train AI models on your check-ins or photos. Your content is yours. The full breakdown is below.</p>
+      <p class="lede">This Privacy Policy describes how Motive ("Motive," "we," "us," or "our") collects, uses, shares, and protects information about you when you use the Motive mobile application (the "Service"). By using the Service, you agree to the practices described in this Policy. If you do not agree, please do not use the Service.</p>
 
       <section>
         <p class="eyebrow">§ 1</p>
-        <h2>What we collect</h2>
-        <p>What you give us: your name, photo (if you set one), the goals you create, your daily check-ins (date, mood, optional photo, optional caption), reflections, chat messages, and friend list. What we collect automatically: app version, device type, OS version, crash logs, and basic analytics like which screens you open (no per-user behavioural profile).</p>
+        <h2>Information We Collect</h2>
+        <p>We collect information in two ways.</p>
+        <p><strong>(a) Information you provide directly.</strong></p>
+        <ul>
+          <li>Account details, including your display name, profile photo (if you choose to add one), and authentication identifier when you sign in through Apple or Google.</li>
+          <li>Goal and habit data, including the goals you create, their titles, durations, and categories.</li>
+          <li>Check-in data, including dates, optional photos, optional captions, and optional difficulty ratings.</li>
+          <li>Reflections, including text you write in the reflections feature.</li>
+          <li>Chat content, including messages and shared media you send to other users in chat threads.</li>
+          <li>Friend connections, including the contacts you choose to connect with through the Service.</li>
+        </ul>
+        <p><strong>(b) Information we collect automatically.</strong></p>
+        <ul>
+          <li>Device and technical information, such as device model, operating system version, app version, language and region preferences, and IP address.</li>
+          <li>Diagnostic data, including crash reports, error logs, and aggregate analytics about feature usage (for example, which screens are opened).</li>
+        </ul>
+        <p>We do not collect precise location, contacts, photos, or biometric data without your explicit consent.</p>
       </section>
+
       <section>
         <p class="eyebrow">§ 2</p>
-        <h2>Where it lives</h2>
-        <p>Your data is stored on your device first and synced to our cloud provider (Supabase, hosted in the EU) so you can sign in on a new phone and find your account. Photos sync to the same provider's encrypted object storage.</p>
+        <h2>How We Use Your Information</h2>
+        <p>We use the information we collect to:</p>
+        <ol type="a">
+          <li>operate, maintain, and improve the Service;</li>
+          <li>synchronize your account and content across your devices;</li>
+          <li>deliver photos, messages, and feed content to the audiences you select;</li>
+          <li>send service-related notifications, such as daily reminders if you enable them, and account or security alerts;</li>
+          <li>diagnose and fix bugs and crashes;</li>
+          <li>detect and prevent fraud, abuse, and other harm to users or to the Service;</li>
+          <li>comply with legal obligations.</li>
+        </ol>
       </section>
+
       <section>
         <p class="eyebrow">§ 3</p>
-        <h2>What we don't do</h2>
-        <p>We don't sell your data to advertisers. We don't train machine-learning models on your check-ins, photos, or messages. We don't share your friend list, content, or activity with third parties for marketing. We don't track you across other apps and websites.</p>
+        <h2>How We Share Your Information</h2>
+        <p>We share your information only as described below.</p>
+        <ol type="a">
+          <li><strong>With other users.</strong> Content you choose to share with friends, chat participants, or the public feed is visible to those audiences.</li>
+          <li><strong>With service providers.</strong> We engage trusted vendors to operate the Service, including our cloud database and storage provider, Supabase, which hosts data in the European Union. These vendors are bound by contractual confidentiality and data-protection obligations.</li>
+          <li><strong>For legal and safety reasons.</strong> We may disclose information when required by a valid legal request, when necessary to enforce these Terms, or when we believe in good faith that disclosure is necessary to protect rights, property, or safety.</li>
+          <li><strong>In a business transfer.</strong> If we are involved in a merger, acquisition, or sale of assets, your information may be transferred as part of that transaction.</li>
+        </ol>
+        <p>We do not sell your personal information to advertisers or data brokers. We do not use your content to train artificial intelligence or machine-learning models. We do not track your activity across other apps and websites.</p>
       </section>
+
       <section>
         <p class="eyebrow">§ 4</p>
-        <h2>Who can see what</h2>
-        <p>Your check-ins are private by default. When you share one to the feed, you pick the audience (friends or public). Chats are visible only to participants. Profile content is governed by your visibility setting. We can't see your photos any more than the bare minimum needed to deliver them between devices.</p>
+        <h2>Data Retention</h2>
+        <p>We retain your information for as long as your account is active and for a reasonable period afterward to comply with legal obligations or resolve disputes. You may delete your account at any time from Settings; once deleted, your data is removed from our systems immediately, and any backup copies are purged within thirty days.</p>
       </section>
+
       <section>
         <p class="eyebrow">§ 5</p>
-        <h2>Children</h2>
-        <p>Motive is not directed at children under 13. We do not knowingly collect personal information from anyone under 13. If you believe a child has provided us data, contact us and we'll delete it.</p>
+        <h2>Data Security</h2>
+        <p>We protect your information using industry-standard administrative, technical, and physical safeguards, including encryption in transit (TLS) and at rest. No system is perfectly secure, however, and we cannot guarantee absolute protection of your information.</p>
       </section>
+
       <section>
         <p class="eyebrow">§ 6</p>
-        <h2>Your rights</h2>
-        <p>You can export your data, edit it, or delete your account from Settings &rarr; Delete account. Deletion is immediate and irreversible: profile, goals, check-ins, photos, and chats are all erased. If you're in the EU, UK, or California, you have additional rights under GDPR / UK GDPR / CCPA; contact us to exercise them.</p>
+        <h2>Your Rights and Choices</h2>
+        <p>Depending on your jurisdiction, you may have certain rights regarding your personal information. These may include the right to:</p>
+        <ol type="a">
+          <li>access the information we hold about you;</li>
+          <li>correct inaccurate or incomplete information;</li>
+          <li>delete your information;</li>
+          <li>restrict or object to certain processing;</li>
+          <li>request a portable copy of your information; and</li>
+          <li>withdraw consent where processing is based on consent.</li>
+        </ol>
+        <p>If you reside in the European Economic Area, the United Kingdom, or California, additional rights may apply under the GDPR, UK GDPR, or CCPA, including the right to lodge a complaint with a supervisory authority. To exercise any of these rights, contact us using the details below.</p>
       </section>
+
       <section>
         <p class="eyebrow">§ 7</p>
-        <h2>Changes</h2>
-        <p>We may update this policy as Motive evolves. When we do, we'll bump the effective date at the top and notify you in the app. Continuing to use Motive after a change means you accept the new policy.</p>
+        <h2>Children's Privacy</h2>
+        <p>The Service is not directed to children under 13 years of age, or such higher minimum age as required by your jurisdiction. We do not knowingly collect personal information from anyone under that age. If you believe a child has provided us with information, please contact us and we will take appropriate steps to delete it.</p>
+      </section>
+
+      <section>
+        <p class="eyebrow">§ 8</p>
+        <h2>International Data Transfers</h2>
+        <p>Your information may be transferred to and processed in countries other than the one in which you reside, including countries that may have different data-protection laws. Where required, we rely on appropriate safeguards such as the standard contractual clauses approved by the European Commission.</p>
+      </section>
+
+      <section>
+        <p class="eyebrow">§ 9</p>
+        <h2>Third-Party Services</h2>
+        <p>The Service may use third-party services, such as authentication providers (Apple, Google) and cloud infrastructure (Supabase). These services have their own privacy policies, and we encourage you to review them. We are not responsible for the privacy practices of any third party.</p>
+      </section>
+
+      <section>
+        <p class="eyebrow">§ 10</p>
+        <h2>Changes to This Policy</h2>
+        <p>We may update this Policy from time to time. When we do, we will update the effective date at the top and notify you within the Service. Your continued use of the Service after the revised Policy takes effect constitutes your acceptance of the changes.</p>
       </section>
 
       <div class="contact">
-        <h2>Privacy questions?</h2>
-        <p>Email <a href="mailto:smalldaysapp@gmail.com" style="color:var(--text);">smalldaysapp@gmail.com</a></p>
+        <h2>Contact</h2>
+        <p>For questions about this Policy or to exercise your privacy rights, please contact us at <a href="mailto:smalldaysapp@gmail.com" style="color:var(--text);">smalldaysapp@gmail.com</a>.</p>
       </div>
 
       <p class="footer">
-        <a href="./">Motive</a> · <a href="./terms.html">Terms of Use</a>
+        <a href="./">Motive</a> &nbsp;·&nbsp; <a href="./terms.html">Terms of Use</a>
       </p>
     </div>
 
     <!-- ARABIC ================================================ -->
     <div class="ar">
-      <p class="effective">سارية من 27 مايو 2026</p>
+      <p class="effective">سارية اعتبارًا من ٢٧ مايو ٢٠٢٦</p>
       <h1>سياسة الخصوصية.</h1>
-      <p class="lede">نجمع أقل ما يلزم لتشغيل موتيف. ما نبيع بياناتك. ما ندرّب نماذج ذكاء اصطناعي على تسجيلاتك ولا صورك. محتواك ملكك. التفاصيل تحت.</p>
+      <p class="lede">تُبيّن سياسة الخصوصية هذه كيف تقوم موتيف ("موتيف"، أو "نحن") بجمع المعلومات عنك واستخدامها ومشاركتها وحمايتها عند استخدامك لتطبيق موتيف ("الخدمة"). باستخدامك للخدمة، فإنك توافق على الممارسات الموضحة في هذه السياسة. وفي حال عدم موافقتك، يُرجى عدم استخدام الخدمة.</p>
 
       <section>
         <p class="eyebrow">§ ١</p>
-        <h2>وش نجمع</h2>
-        <p>اللي تعطيناه: اسمك، صورتك (لو حطيت)، أهدافك، تسجيلاتك اليومية (التاريخ، الإحساس، الصورة الاختيارية، التعليق الاختياري)، تأمّلاتك، رسائل المحادثات، وقائمة أصدقائك. اللي نجمعه تلقائيًا: نسخة التطبيق، نوع الجهاز، نظام التشغيل، سجلات الأعطال، وإحصاءات بسيطة (أي شاشات تفتح، بدون ملف شخصي سلوكي).</p>
+        <h2>المعلومات التي نجمعها</h2>
+        <p>نجمع المعلومات بطريقتين.</p>
+        <p><strong>(أ) المعلومات التي تقدّمها مباشرةً.</strong></p>
+        <ul>
+          <li>اسمك للعرض، وصورتك الشخصية (إن اخترت إضافتها)، ومعرّف المصادقة عند تسجيل دخولك عبر Apple أو Google.</li>
+          <li>الأهداف التي تُنشئها وعناوينها ومدّتها وفئاتها.</li>
+          <li>بيانات التسجيل اليومي بما فيها التواريخ والصور الاختيارية والتعليقات الاختيارية وتقييمات الصعوبة الاختيارية.</li>
+          <li>تأمّلاتك المكتوبة في ميزة التأمّلات.</li>
+          <li>رسائل المحادثات والوسائط التي تُرسلها للمستخدمين الآخرين.</li>
+          <li>قائمة الأصدقاء التي تختار التواصل معها عبر الخدمة.</li>
+        </ul>
+        <p><strong>(ب) المعلومات التي نجمعها تلقائيًا.</strong></p>
+        <ul>
+          <li>طراز الجهاز ونظام التشغيل وإصدار التطبيق وتفضيلات اللغة والمنطقة وعنوان IP.</li>
+          <li>تقارير الأعطال وسجلات الأخطاء وإحصاءات الاستخدام المُجمَّعة (مثل الشاشات المفتوحة).</li>
+        </ul>
+        <p>ولا نجمع موقعك الدقيق أو جهات اتصالك أو صورك أو بياناتك الحيوية دون موافقتك الصريحة.</p>
       </section>
+
       <section>
         <p class="eyebrow">§ ٢</p>
-        <h2>وين تُخزّن</h2>
-        <p>بياناتك تُخزّن أول شي على جهازك، ثم تتزامن مع مزوّد السحابة Supabase (مستضاف في الاتحاد الأوروبي) عشان تقدر تسجّل دخولك من جهاز جديد وتلقى حسابك. الصور تتزامن مع نفس المزوّد في تخزين مشفّر.</p>
+        <h2>كيف نستخدم معلوماتك</h2>
+        <p>نستخدم المعلومات التي نجمعها للأغراض التالية:</p>
+        <ol type="a">
+          <li>تشغيل الخدمة وصيانتها وتطويرها؛</li>
+          <li>مزامنة حسابك ومحتواك بين أجهزتك؛</li>
+          <li>إيصال الصور والرسائل ومحتوى الفيد إلى الجماهير التي تختارها؛</li>
+          <li>إرسال إشعارات متعلقة بالخدمة، مثل التذكيرات اليومية عند تفعيلها، وتنبيهات الحساب والأمان؛</li>
+          <li>تشخيص الأعطال والأخطاء وإصلاحها؛</li>
+          <li>كشف الاحتيال وإساءة الاستخدام ومنع أي أذى للمستخدمين أو للخدمة؛</li>
+          <li>الالتزام بالواجبات القانونية.</li>
+        </ol>
       </section>
+
       <section>
         <p class="eyebrow">§ ٣</p>
-        <h2>وش ما نسوي</h2>
-        <p>ما نبيع بياناتك للمعلنين. ما ندرّب نماذج تعلّم آلي على تسجيلاتك أو صورك أو رسائلك. ما نشارك أصدقاءك أو محتواك أو نشاطك مع طرف ثالث للتسويق. ما نتتبّعك في تطبيقات أو مواقع ثانية.</p>
+        <h2>كيف نشارك معلوماتك</h2>
+        <p>نشارك معلوماتك فقط على النحو الموضح أدناه.</p>
+        <ol type="a">
+          <li><strong>مع المستخدمين الآخرين.</strong> يكون المحتوى الذي تختار مشاركته مع الأصدقاء أو المشاركين في المحادثات أو الفيد العام مرئيًا لتلك الجماهير.</li>
+          <li><strong>مع مزوّدي الخدمات.</strong> نتعامل مع مورّدين موثوقين لتشغيل الخدمة، بما في ذلك مزوّد قواعد البيانات والتخزين السحابي Supabase الذي يستضيف البيانات في الاتحاد الأوروبي. ويلتزم هؤلاء المورّدون تعاقديًا بالسرّية وحماية البيانات.</li>
+          <li><strong>لأغراض قانونية أو لحماية السلامة.</strong> قد نُفصح عن المعلومات استجابةً لطلب قانوني صحيح، أو عند الحاجة لتطبيق هذه الشروط، أو إذا اعتقدنا بحُسن نية أن الإفصاح ضروري لحماية الحقوق أو الممتلكات أو السلامة.</li>
+          <li><strong>في حالات نقل الأعمال.</strong> في حال انخراطنا في عملية اندماج أو استحواذ أو بيع أصول، قد تُنقَل معلوماتك ضمن تلك المعاملة.</li>
+        </ol>
+        <p>ولا نبيع معلوماتك الشخصية للمعلنين أو وسطاء البيانات. ولا نستخدم محتواك لتدريب نماذج الذكاء الاصطناعي أو التعلّم الآلي. ولا نتتبّع نشاطك عبر تطبيقات أو مواقع أخرى.</p>
       </section>
+
       <section>
         <p class="eyebrow">§ ٤</p>
-        <h2>مين يشوف وش</h2>
-        <p>تسجيلاتك خاصة بشكل افتراضي. لمّا تشارك واحد في الفيد، تختار الجمهور (أصدقاء أو عام). المحادثات يشوفها المشاركون فقط. محتوى ملفّك يخضع لإعدادات الرؤية اللي تختارها. ما نقدر نشوف صورك أكثر من الحد الأدنى اللازم لنقلها بين أجهزتك.</p>
+        <h2>مدة الاحتفاظ بالبيانات</h2>
+        <p>نحتفظ بمعلوماتك ما دام حسابك نشطًا، ولمدة معقولة بعد ذلك للوفاء بالتزاماتنا القانونية أو لتسوية النزاعات. ويحق لك حذف حسابك في أي وقت من الإعدادات؛ وبمجرد الحذف، تُزال بياناتك من أنظمتنا فورًا، وتُمحى أي نُسخ احتياطية خلال ثلاثين يومًا.</p>
       </section>
+
       <section>
         <p class="eyebrow">§ ٥</p>
-        <h2>الأطفال</h2>
-        <p>موتيف ما هو موجّه للأطفال تحت 13 سنة. ما نجمع عمدًا بيانات شخصية من أي شخص دون هذه السن. لو تشكّ إن طفل قدّم بيانات، تواصل معنا ونحذفها.</p>
+        <h2>أمان البيانات</h2>
+        <p>نحمي معلوماتك باستخدام تدابير إدارية وتقنية ومادية تتوافق مع معايير الصناعة، بما في ذلك التشفير أثناء النقل (TLS) وأثناء التخزين. ومع ذلك، لا يوجد نظام آمن بشكل مطلق، ولا يمكننا ضمان حماية معلوماتك بشكل كامل.</p>
       </section>
+
       <section>
         <p class="eyebrow">§ ٦</p>
-        <h2>حقوقك</h2>
-        <p>تقدر تصدّر بياناتك أو تعدّلها أو تحذف حسابك من الإعدادات &larr; حذف الحساب. الحذف فوري ولا رجعة فيه: الملف، الأهداف، التسجيلات، الصور، المحادثات، كلها تتمسح. لو كنت في الاتحاد الأوروبي أو المملكة المتحدة أو كاليفورنيا، لك حقوق إضافية بموجب GDPR / UK GDPR / CCPA. تواصل معنا لممارستها.</p>
+        <h2>حقوقك وخياراتك</h2>
+        <p>تبعًا لبلدك، قد تتمتع بحقوق معيّنة فيما يتعلق بمعلوماتك الشخصية. وقد تشمل هذه الحقوق ما يلي:</p>
+        <ol type="a">
+          <li>الوصول إلى المعلومات التي نحتفظ بها عنك؛</li>
+          <li>تصحيح المعلومات غير الدقيقة أو الناقصة؛</li>
+          <li>حذف معلوماتك؛</li>
+          <li>تقييد بعض المعالجة أو الاعتراض عليها؛</li>
+          <li>طلب نسخة قابلة للنقل من معلوماتك؛</li>
+          <li>سحب الموافقة إذا كانت المعالجة قائمة عليها.</li>
+        </ol>
+        <p>وإذا كنت مقيمًا في المنطقة الاقتصادية الأوروبية أو المملكة المتحدة أو كاليفورنيا، فقد تتمتع بحقوق إضافية بموجب اللائحة العامة لحماية البيانات (GDPR) أو GDPR للمملكة المتحدة أو قانون CCPA، بما في ذلك حق تقديم شكوى إلى الهيئة الإشرافية المختصة. ولممارسة أي من هذه الحقوق، يُرجى التواصل معنا عبر التفاصيل أدناه.</p>
       </section>
+
       <section>
         <p class="eyebrow">§ ٧</p>
-        <h2>التغييرات</h2>
-        <p>قد نحدّث هذه السياسة مع تطوّر موتيف. لمّا يصير، نرفع تاريخ السريان فوق ونعلمك داخل التطبيق. استمرارك في استخدام موتيف بعد التغيير معناه إنك توافق على السياسة الجديدة.</p>
+        <h2>خصوصية الأطفال</h2>
+        <p>الخدمة ليست موجّهة إلى الأطفال دون ١٣ عامًا، أو الحدّ الأدنى الأعلى للسن المطلوب وفقًا لقوانين بلدك. ولا نجمع عمدًا أي معلومات شخصية ممن هم دون هذه السن. وإذا اعتقدت أن طفلًا قد قدّم لنا معلومات، يُرجى التواصل معنا وسنتّخذ الخطوات اللازمة لحذفها.</p>
+      </section>
+
+      <section>
+        <p class="eyebrow">§ ٨</p>
+        <h2>نقل البيانات دوليًا</h2>
+        <p>قد تُنقَل معلوماتك وتُعالَج في دول غير دولة إقامتك، بما في ذلك دول قد تكون فيها قوانين حماية البيانات مختلفة. وعند الاقتضاء، نعتمد على الضمانات المناسبة، مثل البنود التعاقدية القياسية المعتمدة من المفوضية الأوروبية.</p>
+      </section>
+
+      <section>
+        <p class="eyebrow">§ ٩</p>
+        <h2>خدمات الأطراف الثالثة</h2>
+        <p>قد تستخدم الخدمة خدمات أطراف ثالثة، مثل مزوّدي المصادقة (Apple وGoogle) والبنية التحتية السحابية (Supabase). ولهذه الخدمات سياسات خصوصية خاصة بها، ونحثّك على مراجعتها. ولسنا مسؤولين عن ممارسات الخصوصية لأي طرف ثالث.</p>
+      </section>
+
+      <section>
+        <p class="eyebrow">§ ١٠</p>
+        <h2>التعديلات على هذه السياسة</h2>
+        <p>قد نُحدّث هذه السياسة من وقت لآخر. وعند القيام بذلك، نُحدّث تاريخ السريان أعلاه ونُخطرك داخل الخدمة. ويُعدّ استمرارك في استخدام الخدمة بعد سريان السياسة المعدّلة قبولًا منك للتغييرات.</p>
       </section>
 
       <div class="contact">
-        <h2>سؤال خصوصية؟</h2>
-        <p>راسلنا على <a href="mailto:smalldaysapp@gmail.com" style="color:var(--text);">smalldaysapp@gmail.com</a></p>
+        <h2>للتواصل</h2>
+        <p>لأي استفسار حول هذه السياسة أو لممارسة حقوقك في الخصوصية، يُرجى مراسلتنا على <a href="mailto:smalldaysapp@gmail.com" style="color:var(--text);">smalldaysapp@gmail.com</a>.</p>
       </div>
 
       <p class="footer">
-        <a href="./">موتيف</a> · <a href="./terms.html">شروط الاستخدام</a>
+        <a href="./">موتيف</a> &nbsp;·&nbsp; <a href="./terms.html">شروط الاستخدام</a>
       </p>
     </div>
   </main>
